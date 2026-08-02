@@ -11,18 +11,13 @@ html{
 }
 
 
-
 body{
 
     background:#050505;
-
     color:white;
-
     overflow-x:hidden;
 
 }
-
-
 
 
 
@@ -31,58 +26,39 @@ body{
 #particles{
 
     position:fixed;
-
-    top:0;
-
-    left:0;
+    inset:0;
 
     width:100%;
-
     height:100%;
 
     pointer-events:none;
 
-    z-index:-3;
+    z-index:-5;
 
 }
 
 
 
-
-
-
-/* CURSOR GLOW ROJO */
-
+/* CURSOR GLOW */
 
 .cursor-glow{
 
     position:fixed;
 
     width:300px;
-
     height:300px;
-
 
     background:#ff0000;
 
+    filter:blur(120px);
 
-    filter:blur(130px);
-
-
-    opacity:.15;
-
+    opacity:.12;
 
     pointer-events:none;
 
-
     z-index:-2;
 
-
 }
-
-
-
-
 
 
 
@@ -91,162 +67,98 @@ body{
 
 header{
 
-
     position:fixed;
-
 
     top:0;
 
-
     width:100%;
-
 
     padding:25px 10%;
 
-
     display:flex;
 
-
     justify-content:space-between;
-
 
     align-items:center;
 
 
-
     background:rgba(5,5,5,.85);
 
-
-
-    backdrop-filter:blur(20px);
-
-
+    backdrop-filter:blur(15px);
 
     border-bottom:1px solid rgba(255,0,0,.2);
 
-
-
     z-index:1000;
 
-
 }
-
-
-
 
 
 
 .logo{
 
-
     font-size:30px;
-
 
     font-weight:900;
 
-
-
     color:#ff0000;
 
-
-
-    text-shadow:
-
-
-    0 0 10px #ff0000,
-
-
-    0 0 30px #ff0000;
-
+    animation:brillo 3s infinite;
 
 }
-
-
-
-
 
 
 
 nav a{
 
-
     color:#ddd;
-
 
     text-decoration:none;
 
-
     margin-left:25px;
-
 
     position:relative;
 
-
     transition:.3s;
 
-
 }
-
-
-
-
-
-nav a::after{
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    left:0;
-
-
-    bottom:-8px;
-
-
-    width:0;
-
-
-    height:2px;
-
-
-    background:#ff0000;
-
-
-    transition:.3s;
-
-
-}
-
-
 
 
 
 nav a:hover{
 
-
     color:#ff0000;
-
 
 }
 
 
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#ff0000;
+
+    transition:.3s;
+
+}
 
 
 
 nav a:hover::after{
 
-
     width:100%;
 
-
 }
-
-
-
-
 
 
 
@@ -255,133 +167,86 @@ nav a:hover::after{
 
 .hero{
 
-
     min-height:100vh;
-
 
     display:flex;
 
-
     align-items:center;
-
 
     padding:0 10%;
 
 
-
     background:
 
-
-
-    radial-gradient(circle at top right,#b30000,transparent 30%),
-
-
-
-    radial-gradient(circle at bottom left,#700000,transparent 25%),
-
-
+    radial-gradient(
+        circle at top right,
+        #900000,
+        transparent 35%
+    ),
 
     #050505;
 
-
-
 }
-
-
-
-
 
 
 
 .hero-content{
 
-
     max-width:850px;
 
-
-    animation:entradaHero 1.2s ease;
-
+    animation:entrada 1s ease;
 
 }
-
-
-
-
 
 
 
 .hero h1{
 
-
     font-size:70px;
-
 
     font-weight:900;
 
-
 }
-
-
 
 
 
 .hero h1 span{
 
-
     color:#ff0000;
 
-
-    text-shadow:
-
-
-    0 0 10px #ff0000,
-
-
-    0 0 40px #ff0000;
-
+    animation:brillo 3s infinite;
 
 }
-
-
-
-
 
 
 
 .hero h2{
 
-
     margin-top:20px;
-
-
-    color:#aaa;
-
 
     font-size:30px;
 
+    color:#aaa;
 
 }
 
 
 
-
-
 .hero p{
-
 
     margin-top:25px;
 
-
     color:#bbb;
-
 
     font-size:18px;
 
-
     line-height:1.8;
 
+}
 
-}/* BOTONES */
+
+
+/* BOTONES */
 
 
 .buttons{
@@ -394,138 +259,37 @@ nav a:hover::after{
 
 .buttons a{
 
-
     display:inline-block;
-
 
     padding:15px 35px;
 
-
     margin-right:15px;
-
 
     border-radius:12px;
 
 
-
     background:#ff0000;
 
-
-
     color:white;
-
 
     text-decoration:none;
 
 
-
-    position:relative;
-
-
-
-    overflow:hidden;
-
-
-
-    transition:.4s;
-
+    transition:.3s;
 
 }
-
-
-
-
-
-
-
-.buttons a::before{
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    top:0;
-
-
-    left:-100%;
-
-
-    width:100%;
-
-
-    height:100%;
-
-
-
-    background:linear-gradient(
-
-        120deg,
-
-        transparent,
-
-        rgba(255,255,255,.5),
-
-        transparent
-
-    );
-
-
-
-    transition:.5s;
-
-
-
-}
-
-
-
-
-
-
-.buttons a:hover::before{
-
-
-    left:100%;
-
-
-}
-
-
-
 
 
 
 .buttons a:hover{
 
-
-    transform:
-
-    translateY(-8px)
-
-    scale(1.05);
-
-
+    transform:translateY(-6px);
 
     box-shadow:
 
-
-
-    0 0 25px #ff0000,
-
-
-
-    0 0 60px rgba(255,0,0,.5);
-
-
+    0 0 25px #ff0000;
 
 }
-
-
-
-
 
 
 
@@ -534,120 +298,55 @@ nav a:hover::after{
 
 section{
 
-
     padding:100px 10%;
 
-
 }
-
-
-
 
 
 
 .titulo-seccion{
 
-
     text-align:center;
-
 
     font-size:45px;
 
-
     margin-bottom:50px;
 
+    color:white;
 
-
-    text-shadow:
-
-
-    0 0 20px rgba(255,0,0,.5);
-
-
-
-}
-
-
-
-
-
-
-
-/* BOX */
-
+}/* CAJAS */
 
 .box{
 
+    background:#0d0d0d;
 
-    background:
-
-
-    linear-gradient(
-
-        145deg,
-
-        #111,
-
-        #080808
-
-    );
-
-
-
-    border:1px solid #333;
-
-
+    border:1px solid #222;
 
     border-radius:20px;
 
-
-
     padding:35px;
-
-
 
     color:#bbb;
 
-
-
     line-height:1.8;
 
-
-
-    transition:.5s;
-
-
+    transition:.4s;
 
 }
-
-
-
-
 
 
 
 .box:hover{
 
-
     border-color:#ff0000;
 
-
-
-    transform:translateY(-8px);
-
-
+    transform:translateY(-5px);
 
     box-shadow:
 
-
-
-    0 0 30px rgba(255,0,0,.3);
-
-
+    0 0 25px rgba(255,0,0,.25);
 
 }
-
-
 
 
 
@@ -658,189 +357,100 @@ section{
 
 .cards{
 
-
     display:grid;
 
-
-
     grid-template-columns:
-
-
     repeat(auto-fit,minmax(300px,1fr));
-
-
 
     gap:30px;
 
-
-
 }
-
-
-
-
 
 
 
 .card{
 
-
     background:#0d0d0d;
-
-
 
     border:1px solid #222;
 
-
-
     border-radius:20px;
-
-
 
     padding:30px;
 
+    transition:transform .3s, border .3s;
 
-
-    transition:.5s;
-
-
-
-    transform-style:preserve-3d;
-
-
+    will-change:transform;
 
 }
-
-
-
-
 
 
 
 .card:hover{
 
-
-    transform:
-
-
-    translateY(-15px)
-
-
-    rotateX(5deg)
-
-
-    rotateY(-5deg);
-
-
-
     border-color:#ff0000;
-
-
 
     box-shadow:
 
-
-
-    0 0 40px rgba(255,0,0,.35);
-
-
+    0 0 30px rgba(255,0,0,.3);
 
 }
-
-
-
-
 
 
 
 .card h3{
 
-
     color:#ff0000;
-
-
 
     font-size:25px;
 
-
-
     margin-bottom:10px;
 
-
-
 }
-
-
-
-
 
 
 
 .card h4{
 
-
     font-size:20px;
-
-
 
     margin-bottom:20px;
 
-
-
 }
-
-
-
-
 
 
 
 .card p{
 
-
     color:#aaa;
-
-
 
     line-height:1.7;
 
-
-
 }
-
-
 
 
 
 .card ul{
 
-
     margin-top:20px;
 
-
-
     padding-left:20px;
-
-
 
 }
 
 
 
-
-
 .card li{
-
 
     color:#ddd;
 
-
-
     margin-bottom:10px;
 
+}
 
 
-}/* SKILLS */
+
+/* SKILLS */
 
 
 .skills{
@@ -859,66 +469,31 @@ section{
 
 .skills span{
 
-
     background:#111;
 
-
-    border:1px solid #333;
-
+    border:1px solid #222;
 
     padding:18px 25px;
 
-
     border-radius:15px;
 
-
-
-    transition:.4s;
-
-
-
-    cursor:pointer;
-
+    transition:.3s;
 
 }
-
-
 
 
 
 .skills span:hover{
 
-
-    color:white;
-
-
-
     border-color:#ff0000;
 
-
-
-    transform:
-
-
-
-    translateY(-10px)
-
-    scale(1.05);
-
-
+    transform:translateY(-8px);
 
     box-shadow:
 
-
-
-    0 0 30px rgba(255,0,0,.5);
-
-
+    0 0 20px rgba(255,0,0,.4);
 
 }
-
-
-
 
 
 
@@ -927,463 +502,169 @@ section{
 
 #contact{
 
-
     text-align:center;
-
-
 
     color:#aaa;
 
-
-
 }
-
-
 
 
 
 #contact p{
 
-
     margin-top:15px;
-
-
 
 }
 
 
 
-
-
-
-
-/* ANIMACIONES SCROLL */
+/* ANIMACION SCROLL */
 
 
 .card,
 .box,
 .skills span{
 
-
     opacity:0;
 
-
-
-    transform:
-
-
-
-    translateY(60px);
-
-
+    transform:translateY(50px);
 
     transition:
 
+    opacity .7s ease,
 
-
-    all .8s ease;
-
-
+    transform .7s ease;
 
 }
-
-
-
-
 
 
 
 .visible{
 
+    opacity:1;
 
-    opacity:1 !important;
-
-
-
-    transform:
-
-
-
-    translateY(0)
-
-    !important;
-
-
+    transform:translateY(0);
 
 }
 
 
 
+/* ENTRADA HERO */
 
 
-
-
-/* HERO */
-
-
-@keyframes entradaHero{
+@keyframes entrada{
 
 
 from{
 
-
     opacity:0;
 
-
-
-    transform:
-
-
-    translateY(80px);
-
-
+    transform:translateY(60px);
 
 }
-
 
 
 to{
 
-
     opacity:1;
 
-
-
-    transform:
-
-
-    translateY(0);
-
-
+    transform:translateY(0);
 
 }
 
 
-
 }
-
-
-
-
-
 
 
 
 /* BRILLO ROJO */
 
 
-@keyframes brilloRojo{
+@keyframes brillo{
 
 
 0%{
 
-
     text-shadow:
-
-
 
     0 0 5px #ff0000;
 
-
-
 }
-
 
 
 50%{
 
-
     text-shadow:
 
+    0 0 25px #ff0000,
 
-
-    0 0 35px #ff0000,
-
-
-
-    0 0 60px #b30000;
-
-
+    0 0 50px #900000;
 
 }
-
 
 
 100%{
 
-
     text-shadow:
-
-
 
     0 0 5px #ff0000;
 
+}
 
 
 }
 
 
 
-}
-
-
-
-
-
-
-
-.logo,
-.hero h1 span{
-
-
-    animation:
-
-
-
-    brilloRojo 3s infinite;
-
-
-
-}/* FONDO ROJO ANIMADO */
+/* FONDO ANIMADO */
 
 
 body::before{
 
-
     content:"";
-
 
     position:fixed;
 
+    width:500px;
 
-
-    width:600px;
-
-
-
-    height:600px;
-
-
+    height:500px;
 
     top:-200px;
 
-
-
     right:-200px;
 
-
-
-
     background:#ff0000;
-
-
-
 
     filter:blur(180px);
 
+    opacity:.08;
 
-
-
-    opacity:.12;
-
-
-
-
-    animation:
-
-
-
-    moverFondo 8s infinite alternate;
-
-
-
+    animation:mover 10s infinite alternate;
 
     z-index:-4;
 
-
-
 }
 
 
 
-
-
-
-@keyframes moverFondo{
+@keyframes mover{
 
 
 from{
 
-
-    transform:translate(0,0);
-
-
+    transform:translate(0);
 
 }
-
 
 
 to{
 
-
-    transform:
-
-
-
-    translate(-120px,120px);
-
-
+    transform:translate(-120px,100px);
 
 }
 
 
-
 }
-
-
-
-
-
-
-
-
-/* PARTICULAS */
-
-
-.particula{
-
-
-    position:fixed;
-
-
-    width:5px;
-
-
-    height:5px;
-
-
-    background:#ff0000;
-
-
-
-    border-radius:50%;
-
-
-
-    box-shadow:
-
-
-
-    0 0 10px #ff0000,
-
-    0 0 25px #ff0000;
-
-
-
-    pointer-events:none;
-
-
-
-    z-index:-1;
-
-
-
-    animation:
-
-
-
-    flotar linear infinite;
-
-
-
-}
-
-
-
-
-
-
-
-@keyframes flotar{
-
-
-from{
-
-
-    transform:
-
-
-
-    translateY(100vh)
-
-    scale(.5);
-
-
-
-    opacity:0;
-
-
-
-}
-
-
-
-20%{
-
-
-    opacity:1;
-
-
-
-}
-
-
-
-to{
-
-
-    transform:
-
-
-
-    translateY(-20vh)
-
-    scale(1.2);
-
-
-
-    opacity:0;
-
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-/* NAVBAR ACTIVA */
-
-
-nav a.activo{
-
-
-    color:#ff0000;
-
-
-
-}
-
-
-
-
 
 
 
@@ -1393,88 +674,47 @@ nav a.activo{
 @media(max-width:800px){
 
 
-
 header{
-
 
     flex-direction:column;
 
-
-
 }
-
 
 
 nav{
 
-
     margin-top:20px;
 
-
-
 }
-
-
-
 
 
 nav a{
 
-
     margin:10px;
 
-
-
 }
-
 
 
 
 .hero h1{
 
-
     font-size:45px;
 
-
-
 }
-
-
 
 
 
 .hero h2{
 
-
     font-size:22px;
 
-
-
 }
-
-
 
 
 
 .titulo-seccion{
 
-
     font-size:35px;
-
-
-
-}
-
-
-
-
-
-.box{
-
-
-    padding:25px;
-
-
 
 }
 
