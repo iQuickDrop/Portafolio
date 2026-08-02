@@ -1,8 +1,8 @@
 
-// Animación de aparición al hacer scroll
+// ANIMACIÓN AL HACER SCROLL
 
 const elementos = document.querySelectorAll(
-    ".card, .box, .skills span"
+    ".animar"
 );
 
 
@@ -32,11 +32,10 @@ const observador = new IntersectionObserver((entradas)=>{
 
 
 
-elementos.forEach((elemento)=>{
+elementos.forEach((elemento,index)=>{
 
 
-    elemento.classList.add("oculto");
-
+    elemento.style.transitionDelay = `${index * 0.08}s`;
 
     observador.observe(elemento);
 
@@ -49,7 +48,8 @@ elementos.forEach((elemento)=>{
 
 
 
-// Scroll suave del menú
+
+// SCROLL SUAVE DEL MENÚ
 
 
 document.querySelectorAll("nav a").forEach((link)=>{
@@ -85,7 +85,7 @@ document.querySelectorAll("nav a").forEach((link)=>{
 
 
 
-// Efecto de escritura en el título
+// EFECTO DE ESCRITURA EN EL TÍTULO
 
 
 const titulo = document.querySelector(".hero h1");
@@ -116,7 +116,7 @@ if(titulo){
             contador++;
 
 
-            setTimeout(escribir,70);
+            setTimeout(escribir,60);
 
 
         }
@@ -138,10 +138,110 @@ if(titulo){
 
 
 
-// Efecto de año automático en el footer
+// CURSOR GLOW
 
 
-const footer = document.querySelector("#contact p:last-child");
+const glow = document.querySelector(".cursor-glow");
+
+
+document.addEventListener("mousemove",(e)=>{
+
+
+    if(glow){
+
+
+        glow.style.left = e.clientX - 150 + "px";
+
+        glow.style.top = e.clientY - 150 + "px";
+
+
+    }
+
+
+});
+
+
+
+
+
+
+
+
+// EFECTO 3D EN CARDS
+
+
+const cards = document.querySelectorAll(".card");
+
+
+cards.forEach((card)=>{
+
+
+    card.addEventListener("mousemove",(e)=>{
+
+
+        const rect = card.getBoundingClientRect();
+
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+
+
+        const rotX =
+
+        ((y - rect.height / 2) / rect.height) * 10;
+
+
+
+        const rotY =
+
+        ((x - rect.width / 2) / rect.width) * 10;
+
+
+
+        card.style.transform = `
+
+        perspective(600px)
+
+        rotateX(${-rotX}deg)
+
+        rotateY(${rotY}deg)
+
+        translateY(-10px)
+
+        `;
+
+
+    });
+
+
+
+    card.addEventListener("mouseleave",()=>{
+
+
+        card.style.transform = "";
+
+
+    });
+
+
+});
+
+
+
+
+
+
+
+
+// AÑO AUTOMÁTICO
+
+
+const footer = document.querySelector(
+    "#contact p:last-child"
+);
+
 
 
 if(footer){
@@ -150,7 +250,73 @@ if(footer){
     const año = new Date().getFullYear();
 
 
-    footer.innerHTML = "© " + año + " iQuickDrop_";
+    footer.innerHTML =
+    "© " + año + " iQuickDrop_";
 
 
 }
+
+
+
+
+
+
+
+
+// NAVBAR ACTIVA
+
+
+const secciones = document.querySelectorAll("section");
+
+const enlaces = document.querySelectorAll("nav a");
+
+
+
+window.addEventListener("scroll",()=>{
+
+
+    let actual = "";
+
+
+
+    secciones.forEach((seccion)=>{
+
+
+        const posicion =
+        seccion.offsetTop - 200;
+
+
+
+        if(scrollY >= posicion){
+
+
+            actual = seccion.id;
+
+
+        }
+
+
+    });
+
+
+
+    enlaces.forEach((link)=>{
+
+
+        link.style.color="#ddd";
+
+
+
+        if(link.getAttribute("href") === "#" + actual){
+
+
+            link.style.color="#8b5cf6";
+
+
+        }
+
+
+    });
+
+
+});
