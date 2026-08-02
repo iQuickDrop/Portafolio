@@ -1,24 +1,15 @@
-const cards = document.querySelectorAll(".card");
+.hidden{
 
-
-window.addEventListener("scroll",()=>{
-
-
-cards.forEach(card=>{
-
-
-let position = card.getBoundingClientRect().top;
-
-
-if(position < window.innerHeight - 100){
-
-card.style.opacity="1";
-card.style.transform="translateY(0)";
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s;
 
 }
 
 
-});
+.show{
 
+    opacity:1;
+    transform:translateY(0);
 
-});
+}
