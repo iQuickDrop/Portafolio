@@ -1,3 +1,4 @@
+
 // Animación de aparición al hacer scroll
 
 const elementos = document.querySelectorAll(
@@ -90,39 +91,45 @@ document.querySelectorAll("nav a").forEach((link)=>{
 const titulo = document.querySelector(".hero h1");
 
 
-const textoOriginal = titulo.innerHTML;
+if(titulo){
 
 
-titulo.innerHTML = "";
+    const textoOriginal = titulo.innerHTML;
 
 
-let contador = 0;
+    titulo.innerHTML = "";
+
+
+    let contador = 0;
 
 
 
-function escribir(){
+    function escribir(){
 
 
-    if(contador < textoOriginal.length){
+        if(contador < textoOriginal.length){
 
 
-        titulo.innerHTML += textoOriginal.charAt(contador);
+            titulo.innerHTML += textoOriginal.charAt(contador);
 
 
-        contador++;
+            contador++;
 
 
-        setTimeout(escribir,70);
+            setTimeout(escribir,70);
+
+
+        }
 
 
     }
 
 
+
+    escribir();
+
+
 }
-
-
-
-escribir();
 
 
 
